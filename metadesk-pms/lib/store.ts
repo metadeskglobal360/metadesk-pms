@@ -22,6 +22,71 @@ function shouldUseMongo() {
   return process.env.METADESK_STORE !== "demo";
 }
 
+function cleanEnv(value?: string) {
+  const trimmed = value?.trim();
+  if (!trimmed) return "";
+  const lower = trimmed.toLowerCase();
+  if (lower.startsWith("your_") || lower.startsWith("replace_") || lower.includes("your-")) return "";
+  return trimmed;
+}
+
+function normalizeUsername(value: string) {
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9_]/g, "_")
+    .replace(/_+/g, "_")
+    .replace(/^_+|_+$/g, "")
+    .slice(0, 30);
+}
+
+async function seedInitialManagerIfConfigured() {
+  const existingManager = await User.exists({
+    role: "manager",
+    isActive: true,
+    $or: [{ approvalStatus: "approved" }, { approvalStatus: { $exists: false } }],
+  });
+  if (existingManager) return;
+
+  const email = cleanEnv(process.env.METADESK_ADMIN_EMAIL).toLowerCase();
+  const password = cleanEnv(process.env.METADESK_ADMIN_PASSWORD);
+  if (!email || !password) return;
+
+  const name = cleanEnv(process.env.METADESK_ADMIN_NAME) || "Metadesk Admin";
+  const username =
+    normalizeUsername(cleanEnv(process.env.METADESK_ADMIN_USERNAME)) ||
+    normalizeUsername(email.split("@")[0]) ||
+    "metadesk_admin";
+
+  const existingUser = await User.findOne({ email }).select("+password");
+  if (existingUser) {
+    existingUser.name = existingUser.name || name;
+    existingUser.username = existingUser.username || username;
+    existingUser.password = password;
+    existingUser.role = "manager";
+    existingUser.team = existingUser.team || cleanEnv(process.env.METADESK_ADMIN_TEAM) || "Management";
+    existingUser.designation = existingUser.designation || cleanEnv(process.env.METADESK_ADMIN_DESIGNATION) || "Workspace Manager";
+    existingUser.isActive = true;
+    existingUser.emailVerified = true;
+    existingUser.approvalStatus = "approved";
+    existingUser.approvedAt = existingUser.approvedAt || new Date();
+    await existingUser.save();
+  } else {
+    await User.create({
+      name,
+      username,
+      email,
+      password,
+      role: "manager",
+      team: cleanEnv(process.env.METADESK_ADMIN_TEAM) || "Management",
+      designation: cleanEnv(process.env.METADESK_ADMIN_DESIGNATION) || "Workspace Manager",
+      isActive: true,
+      emailVerified: true,
+      approvalStatus: "approved",
+      approvedAt: new Date(),
+    });
+  }
+}
+
 function objectId(id?: string | null) {
   return id && mongoose.Types.ObjectId.isValid(id) ? new mongoose.Types.ObjectId(id) : null;
 }
@@ -323,6 +388,7 @@ async function ensureMongoSeed() {
 
   seedPromise = (async () => {
     await connectDB();
+    await seedInitialManagerIfConfigured();
     if (process.env.NODE_ENV === "production") return;
     if (process.env.METADESK_SEED_DEMO !== "true") return;
 
