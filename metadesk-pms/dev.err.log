@@ -1,0 +1,239 @@
+[31m[auth][error][0m CallbackRouteError: Read more at https://errors.authjs.dev#callbackrouteerror
+[31m[auth][cause][0m: MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+    at _handleConnectionErrors (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\mongoose\lib\connection.js:1169:11)
+    at NativeConnection.openUri (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\mongoose\lib\connection.js:1100:11)
+    at async connectDB (webpack-internal:///(rsc)/./lib/db.ts:28:23)
+    at async eval (webpack-internal:///(rsc)/./lib/store.ts:369:9)
+[31m[auth][details][0m: {
+  "type": "ReplicaSetNoPrimary",
+  "servers": {},
+  "stale": false,
+  "compatible": true,
+  "heartbeatFrequencyMS": 10000,
+  "localThresholdMS": 15,
+  "setName": "atlas-zyerz7-shard-0",
+  "maxElectionId": null,
+  "maxSetVersion": null,
+  "commonWireVersion": 0,
+  "logicalSessionTimeoutMinutes": null,
+  "provider": "credentials"
+}
+ ⨯ MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+    at _handleConnectionErrors (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\mongoose\lib\connection.js:1169:11)
+    at NativeConnection.openUri (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\mongoose\lib\connection.js:1100:11)
+    at async connectDB (webpack-internal:///(rsc)/./lib/db.ts:28:23)
+    at async eval (webpack-internal:///(rsc)/./lib/store.ts:369:9) {
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-bh4a8hc-shard-00-00.ufprgaq.mongodb.net:27017' => [ServerDescription],
+      'ac-bh4a8hc-shard-00-01.ufprgaq.mongodb.net:27017' => [ServerDescription],
+      'ac-bh4a8hc-shard-00-02.ufprgaq.mongodb.net:27017' => [ServerDescription]
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-zyerz7-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  cause: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-bh4a8hc-shard-00-00.ufprgaq.mongodb.net:27017' => [ServerDescription],
+      'ac-bh4a8hc-shard-00-01.ufprgaq.mongodb.net:27017' => [ServerDescription],
+      'ac-bh4a8hc-shard-00-02.ufprgaq.mongodb.net:27017' => [ServerDescription]
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-zyerz7-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  }
+}
+ ⨯ MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+    at _handleConnectionErrors (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\mongoose\lib\connection.js:1169:11)
+    at NativeConnection.openUri (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\mongoose\lib\connection.js:1100:11)
+    at async connectDB (webpack-internal:///(rsc)/./lib/db.ts:28:23)
+    at async eval (webpack-internal:///(rsc)/./lib/store.ts:369:9) {
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-bh4a8hc-shard-00-00.ufprgaq.mongodb.net:27017' => [ServerDescription],
+      'ac-bh4a8hc-shard-00-01.ufprgaq.mongodb.net:27017' => [ServerDescription],
+      'ac-bh4a8hc-shard-00-02.ufprgaq.mongodb.net:27017' => [ServerDescription]
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-zyerz7-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  cause: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-bh4a8hc-shard-00-00.ufprgaq.mongodb.net:27017' => [ServerDescription],
+      'ac-bh4a8hc-shard-00-01.ufprgaq.mongodb.net:27017' => [ServerDescription],
+      'ac-bh4a8hc-shard-00-02.ufprgaq.mongodb.net:27017' => [ServerDescription]
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-zyerz7-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  }
+}
+[31m[auth][error][0m CallbackRouteError: Read more at https://errors.authjs.dev#callbackrouteerror
+[31m[auth][cause][0m: MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+    at _handleConnectionErrors (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\mongoose\lib\connection.js:1169:11)
+    at NativeConnection.openUri (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\mongoose\lib\connection.js:1100:11)
+    at async connectDB (webpack-internal:///(rsc)/./lib/db.ts:28:23)
+    at async eval (webpack-internal:///(rsc)/./lib/store.ts:369:9)
+    at async authenticateUser (webpack-internal:///(rsc)/./lib/store.ts:609:5)
+    at async Object.authorize (webpack-internal:///(rsc)/./lib/auth.ts:40:30)
+    at async Module.callback (webpack-internal:///(rsc)/./node_modules/@auth/core/lib/actions/callback/index.js:241:39)
+    at async AuthInternal (webpack-internal:///(rsc)/./node_modules/@auth/core/lib/index.js:70:24)
+    at async Auth (webpack-internal:///(rsc)/./node_modules/@auth/core/index.js:130:34)
+    at async C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
+    at async e_.execute (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1587:40)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\lib\router-server.js:353:24)
+    at async requestHandlerImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\lib\router-server.js:377:13)
+    at async Server.requestListener (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\lib\start-server.js:141:13)
+[31m[auth][details][0m: {
+  "type": "ReplicaSetNoPrimary",
+  "servers": {},
+  "stale": false,
+  "compatible": true,
+  "heartbeatFrequencyMS": 10000,
+  "localThresholdMS": 15,
+  "setName": "atlas-zyerz7-shard-0",
+  "maxElectionId": null,
+  "maxSetVersion": null,
+  "commonWireVersion": 0,
+  "logicalSessionTimeoutMinutes": null,
+  "provider": "credentials"
+}
+[31m[auth][error][0m CredentialsSignin: Read more at https://errors.authjs.dev#credentialssignin
+    at Module.callback (webpack-internal:///(rsc)/./node_modules/@auth/core/lib/actions/callback/index.js:246:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async AuthInternal (webpack-internal:///(rsc)/./node_modules/@auth/core/lib/index.js:70:24)
+    at async Auth (webpack-internal:///(rsc)/./node_modules/@auth/core/index.js:130:34)
+    at async C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
+    at async e_.execute (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1587:40)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\lib\router-server.js:353:24)
+    at async requestHandlerImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\lib\router-server.js:377:13)
+    at async Server.requestListener (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\lib\start-server.js:141:13)
+[31m[auth][error][0m CredentialsSignin: Read more at https://errors.authjs.dev#credentialssignin
+    at Module.callback (webpack-internal:///(rsc)/./node_modules/@auth/core/lib/actions/callback/index.js:246:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async AuthInternal (webpack-internal:///(rsc)/./node_modules/@auth/core/lib/index.js:70:24)
+    at async Auth (webpack-internal:///(rsc)/./node_modules/@auth/core/index.js:130:34)
+    at async C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
+    at async e_.execute (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1587:40)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\lib\router-server.js:353:24)
+    at async requestHandlerImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\lib\router-server.js:377:13)
+    at async Server.requestListener (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\lib\start-server.js:141:13)
+[31m[auth][error][0m CredentialsSignin: Read more at https://errors.authjs.dev#credentialssignin
+    at Module.callback (webpack-internal:///(rsc)/./node_modules/@auth/core/lib/actions/callback/index.js:246:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async AuthInternal (webpack-internal:///(rsc)/./node_modules/@auth/core/lib/index.js:70:24)
+    at async Auth (webpack-internal:///(rsc)/./node_modules/@auth/core/index.js:130:34)
+    at async C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
+    at async e_.execute (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1587:40)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\lib\router-server.js:353:24)
+    at async requestHandlerImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\lib\router-server.js:377:13)
+    at async Server.requestListener (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\lib\start-server.js:141:13)
+[31m[auth][error][0m CredentialsSignin: Read more at https://errors.authjs.dev#credentialssignin
+    at Module.callback (webpack-internal:///(rsc)/./node_modules/@auth/core/lib/actions/callback/index.js:246:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async AuthInternal (webpack-internal:///(rsc)/./node_modules/@auth/core/lib/index.js:70:24)
+    at async Auth (webpack-internal:///(rsc)/./node_modules/@auth/core/index.js:130:34)
+    at async C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:53446
+    at async e_.execute (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:44747)
+    at async e_.handle (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:54700)
+    at async doRender (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1377:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1587:40)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1507:28)
+    at async DevServer.renderPageComponent (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\base-server.js:816:17)
+    at async C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\lib\router-server.js:174:21)
+    at async handleRequest (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\lib\router-server.js:353:24)
+    at async requestHandlerImpl (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\lib\router-server.js:377:13)
+    at async Server.requestListener (C:\Users\Hp\Downloads\metadesk-pms\metadesk-pms\node_modules\next\dist\server\lib\start-server.js:141:13)

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Recurse -Depth 2)",
+      "Bash(Select-Object -First 100)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\Hp\\\\Downloads\\\\metadesk-pms\" -Recurse -Depth 4)",
+      "Bash(Select-Object FullName)",
+      "Bash(Format-Table -AutoSize)"
+    ]
+  }
+}

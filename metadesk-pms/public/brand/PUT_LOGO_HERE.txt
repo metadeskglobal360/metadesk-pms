@@ -1,0 +1,11 @@
+Put the official Metadesk Global logo in this folder.
+
+Preferred filename:
+logo.png
+
+Also supported:
+logo.jpg
+logo.jpeg
+logo.svg
+
+The app checks this folder before falling back to the temporary demo SVG.
