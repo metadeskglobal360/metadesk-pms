@@ -1,10 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getToken } from "next-auth/jwt";
 
-function usesSecureAuthCookie(req: NextRequest) {
-  return req.nextUrl.protocol === "https:" || req.headers.get("x-forwarded-proto") === "https";
-}
-
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
@@ -21,15 +17,36 @@ export async function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  const isAuthPage = pathname === "/login" || pathname === "/register" || pathname === "/verify-email";
+  const secret = process.env.AUTH_SECRET || process.env.NEXTAUTH_SECRET;
 
-  const token = await getToken({
-    req,
-    secret: process.env.AUTH_SECRET || process.env.NEXTAUTH_SECRET,
-    secureCookie: usesSecureAuthCookie(req),
-  });
+  // Try both cookie names to handle HTTP and HTTPS environments
+  const token =
+    (await getToken({
+      req,
+      secret,
+      cookieName: "next-auth.session-token",
+    })) ||
+    (await getToken({
+      req,
+      secret,
+      cookieName: "__Secure-next-auth.session-token",
+    })) ||
+    (await getToken({
+      req,
+      secret,
+      cookieName: "__Secure-authjs.session-token",
+    })) ||
+    (await getToken({
+      req,
+      secret,
+      cookieName: "authjs.session-token",
+    }));
 
   const isLoggedIn = !!token;
+  const isAuthPage =
+    pathname === "/login" ||
+    pathname === "/register" ||
+    pathname === "/verify-email";
 
   // Already logged in — don't show auth pages again
   if (isAuthPage && isLoggedIn) {
@@ -42,6 +59,7 @@ export async function middleware(req: NextRequest) {
   }
 
   const role = token?.role as string | undefined;
+
   const managerOnly =
     pathname.startsWith("/team") ||
     pathname.startsWith("/settings") ||
