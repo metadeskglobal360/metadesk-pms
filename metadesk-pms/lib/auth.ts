@@ -5,6 +5,17 @@ import { authenticateUser, findUserByEmail } from "@/lib/store";
 export const { handlers, auth, signIn, signOut } = NextAuth({
   secret: process.env.AUTH_SECRET || process.env.NEXTAUTH_SECRET,
   trustHost: true,
+  cookies: {
+    sessionToken: {
+      name: "next-auth.session-token",
+      options: {
+        httpOnly: true,
+        sameSite: "lax" as const,
+        path: "/",
+        secure: false,
+      },
+    },
+  },
   session: { strategy: "jwt", maxAge: 30 * 24 * 60 * 60 }, // 30 days
   pages: {
     signIn: "/login",
@@ -19,10 +30,11 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null;
-
-        const user = await authenticateUser(credentials.email as string, credentials.password as string);
+        const user = await authenticateUser(
+          credentials.email as string,
+          credentials.password as string
+        );
         if (!user) return null;
-
         return {
           id: user.id,
           name: user.name,
@@ -47,7 +59,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         token.avatar = cleanAvatar((user as any).avatar);
       } else if (token.email) {
         const currentUser = await findUserByEmail(token.email as string);
-
         if (currentUser) {
           token.id = currentUser.id;
           token.name = currentUser.name;
