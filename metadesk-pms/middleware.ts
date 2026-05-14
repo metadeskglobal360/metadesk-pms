@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getToken } from "next-auth/jwt";
 
+function usesSecureAuthCookie(req: NextRequest) {
+  return req.nextUrl.protocol === "https:" || req.headers.get("x-forwarded-proto") === "https";
+}
+
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
@@ -22,6 +26,7 @@ export async function middleware(req: NextRequest) {
   const token = await getToken({
     req,
     secret: process.env.AUTH_SECRET || process.env.NEXTAUTH_SECRET,
+    secureCookie: usesSecureAuthCookie(req),
   });
 
   const isLoggedIn = !!token;
